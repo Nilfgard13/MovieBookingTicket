@@ -1,0 +1,6 @@
+This favicon was generated using the following font:
+
+- Font Title: Headland One
+- Font Author: Copyright (c) 2011-2012, Sorkin Type Co (www.sorkintype.com), with Reserved Font Name "Headland"
+- Font Source: https://fonts.gstatic.com/s/headlandone/v16/yYLu0hHR2vKnp89Tk1TCq3Tx0PlTeZ3mJA.ttf
+- Font License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL))

@@ -1,0 +1,365 @@
+/* // <uniquifier>: Use a unique and descriptive class name
+
+.schibsted-grotesk {
+    font-family: "Schibsted Grotesk", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+} */
+
+:root,
+[data-bs-theme] {
+    --blue-bg-color: rgba(30, 112, 194, 0.3);
+}
+
+@font-face {
+    font-family: 'Schibsted Grotesk';
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/schibstedgrotesk/v3/JqzI5SSPQuCQF3t8uOwiUL-taUTtap9DcSQBg_nT9FQY6oLoDPhjdFW1OQ.woff2) format('woff2');
+    unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+body {
+    font-family: 'Schibsted Grotesk', sans-serif;
+    background-image: URL('/assets/images/mainbg.jpg?v=20240427');
+    background-color: rgba(0, 0, 0, 0.6);
+    background-blend-mode: overlay;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+}
+
+body p {
+    color: white;
+    text-align: justify;
+}
+
+header {
+    display: inline;
+}
+
+main {
+    padding: 0px 25px;
+    overflow: auto;
+}
+
+.jumbotron {
+    height: 150px;
+    background-color: rgba(26, 55, 99, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    margin: 0;
+    font-weight: bold;
+    font-size: 50px;
+    text-align: center;
+    color: white;
+}
+
+h2 {
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+}
+
+.content p {
+    text-align: justify;
+}
+
+aside p {
+    text-align: justify;
+}
+
+.logo-image {
+    padding: 5px 0px;
+    margin-left: 10px;
+}
+
+.login-btn {
+    color: white;
+    background-color: rgb(67, 109, 172);
+    border-style: none;
+    border-radius: 15px;
+    padding: 10px 25px;
+    margin-right: 10px;
+}
+
+.login-btn:hover {
+    color: darkblue;
+    background-color: white;
+    cursor: pointer;
+}
+
+nav ul {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+}
+
+nav a:hover {
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    color: rgb(63, 63, 161);
+}
+
+nav a:active {
+    color: yellow;
+}
+
+nav li {
+    font-size: 15px;
+    display: inline;
+    margin-left: 13px;
+    margin-right: 13px;
+    list-style-type: none;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    padding: 10px;
+    background-color: rgb(221, 120, 38);
+    z-index: 1000;
+}
+
+nav ul li a {
+    transition: font-size 1s ease;
+}
+
+/* Content Sections */
+.content {
+    /* background-color: rgba(0, 0, 0, 0.6);
+    background-size: cover; */
+    /* padding: 0px 0px; */
+}
+
+#films {
+    background-color: rgba(1, 3, 5, 0.6);
+    padding: 10px 20px 30px;
+}
+
+#now-showing {
+    background-color: rgba(30, 112, 194, 0.3);
+    padding: 10px 20px 30px;
+}
+
+#top-movie {
+    background-color: rgba(1, 3, 5, 0.6);
+    padding: 10px 20px 30px;
+}
+
+#book-tickets {
+
+    background-color: rgba(30, 112, 194, 0.3);
+    padding: 10px 20px 30px;
+}
+
+.film-gallery {
+    display: flex;
+    white-space: nowrap;
+    flex-wrap: nowrap;
+    gap: 25px;
+    margin-bottom: 20px;
+    align-items: center;
+    /* Vertikal tengah */
+    justify-content: flex-start;
+    position: relative;
+    overflow: hidden;
+    /* max-width: calc(220px * 5); */
+    /* overflow-x: hidden;  */
+}
+
+.film-card {
+    flex: 0 0 auto;
+    display: inline-block;
+    height: 350px;
+    width: 220px;
+    background-color: crimson;
+    border: 2px;
+    border-color: aliceblue;
+    border-radius: 20px;
+    overflow: hidden;
+    background-size: cover;
+    margin: 20px 0px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.film-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.button-slider {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.dots {
+    display: flex;
+    gap: 5px;
+    /* Jarak antara dot */
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: #bbb;
+    /* Warna default untuk dot */
+    cursor: pointer;
+}
+
+.active-dot {
+    background-color: #333;
+    /* Warna dot aktif */
+}
+
+.prev-btn,
+.next-btn {
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.prev-btn:focus,
+.next-btn:focus {
+    outline: none;
+}
+
+.slide-container {
+    max-width: 1120px;
+    background-color: grey;
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+    margin: 25px 0px;
+}
+
+.slide-content {
+    margin: 0 40px;
+}
+
+.card {
+    width: 320px;
+    border-radius: 25px;
+    background-color: #FFF;
+}
+
+.image-content,
+.card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 14px;
+}
+
+.image-content {
+    position: relative;
+    row-gap: 5px;
+}
+
+.overlay {
+    position: absolute;
+    right: 0;
+    bottom: -40px;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #4070f4;
+    border-radius: 25px 25px 0px 25px;
+}
+
+.overlay::before,
+overlay::after {
+    content: '';
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    background-color: #4070f4;
+}
+
+overlay::after {
+    border-radius: 0 25px 0 0;
+    background-color: #FFF;
+}
+
+.card-image {
+    position: relative;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    background: #FFF;
+    padding: 3px;
+}
+
+.card-image .card-img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #4070f4;
+}
+
+.card-content p {
+    color: black;
+}
+
+.name {
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+}
+
+.description {
+    font-size: 14px;
+    text-align: center;
+}
+
+.button {
+    border: none;
+    font-size: 16px;
+    color: #FFF;
+    padding: 8px 16px;
+    background-color: #4070f4;
+    border-radius: 6px;
+    margin: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    background: #265DF2;
+}
+
+
+footer {
+    font-size: 20px;
+    height: 20px;
+    text-align: center;
+    color: white;
+    background-color: rgb(63, 63, 161);
+    justify-content: center;
+}
