@@ -48,7 +48,7 @@
           <li><a href="#about-us">ABOUT US</a></li>
         </ul>
       </div>
-      <a href="/pages/login_page.php"><button class="login-btn">LOGIN</button></a>
+      <a href="public/login.php"><button class="login-btn">LOGIN</button></a>
     </nav>
   </header>
 

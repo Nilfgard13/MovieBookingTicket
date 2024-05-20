@@ -21,10 +21,5 @@ foreach ($films as $index => $film) {
     echo '</div>';
 }
 
-// foreach ($films as $film) {
-//     echo '<div class="film-card">';
-//     echo '<img src="assets/images/' . $film["image"] . '" alt="' . $film["title"] . '">';
-//     echo '<h3>' . $film["title"] . '</h3>';
-//     echo '</div>';
-// }
-// ?>
+
+?>
