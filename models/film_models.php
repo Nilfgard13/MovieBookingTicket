@@ -14,7 +14,7 @@ $films = [
 
 foreach ($films as $index => $film) {
     echo '<div class="film-card">';
-    echo '<img src="assets/images/' . $film["image"] . '" alt="' . $film["title"] . '">';
+    echo '<img src="src/assets/images/' . $film["image"] . '" alt="' . $film["title"] . '">';
     echo '<h3>' . $film["title"] . '</h3>';
     // Tambahkan elemen dot
     echo '<span class="dot" data-index="' . $index . '"></span>';
