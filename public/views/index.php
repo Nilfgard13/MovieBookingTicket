@@ -1,3 +1,8 @@
+<?php
+
+require __DIR__ . '/../../app/src/bootstrap.php';
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -10,7 +15,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11.1.1/swiper-bundle.min.css">
 
   <!-- My CSS -->
-  <link rel="stylesheet" href="src/assets/css/style.css">
+  <link rel="stylesheet" href="../../app/assets/css/style.css">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,9 +26,9 @@
   <script src="script.js" defer></script>
 
   <!-- Website Favicon -->
-  <link rel="apple-touch-icon" sizes="180x180" href="src/assets/images/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="src/assets/images/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="src/assets/images/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../app/assets/images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../app/assets/images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../app/assets/images/favicon/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
   <title>Get Film Official</title>
@@ -37,7 +42,7 @@
 
     <nav>
       <div class="logo-image">
-        <img src="src/assets/images/getfilm-logo.png" alt="logo-get-film-official" height="25px">
+        <img src="../../app/assets/images/getfilm-logo.png" alt="logo-get-film-official" height="25px">
       </div>
       <div class="menu-list">
         <ul>
@@ -48,7 +53,7 @@
           <li><a href="#about-us">ABOUT US</a></li>
         </ul>
       </div>
-      <a href="public/login.php"><button class="login-btn">LOGIN</button></a>
+      <a href="login.php"><button class="login-btn">LOGIN</button></a>
     </nav>
   </header>
 
@@ -79,7 +84,7 @@
       <article id="now-showing">
         <h2>Now Showing</h2>
         <div class="film-gallery">
-          <?php include_once "models/film_models.php"; ?>
+          <?php include_once "../../app/src/models/film_models.php"; ?>
         </div>
         <div class="button-slider">
           <button class="prev-btn">&#10094;</button>
@@ -206,15 +211,13 @@
             <span class="overlay"></span>
 
             <div class="card-image">
-              <img src="src/assets/images/film1.png" alt="" class="card-img">
+              <img src="../../app/assets/images/film1.png" alt="" class="card-img">
             </div>
           </div>
 
           <div class=" card-content">
             <h3 class="name">Badarawuhi</h3>
-            <p class="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem, eligendi! Alias
-              suscipit voluptatem temporibus reiciendis ab, labore voluptate esse unde iure dolor quibusdam inventore
-              maiores?</p>
+            <p class="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem, eligendi! Alias suscipit voluptatem temporibus reiciendis ab, labore voluptate esse unde iure dolor quibusdam inventore maiores?</p>
             <button class="button">View More</button>
           </div>
 

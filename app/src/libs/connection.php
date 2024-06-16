@@ -1,5 +1,11 @@
 <?php
 
+
+const DB_HOST = 'localhost';
+const DB_NAME = 'getticket';
+const DB_USER = 'root';
+const DB_PASSWORD = '';
+
 /**
  * Connect to the database and returns an instance of PDO class
  * or false if the connection fails
