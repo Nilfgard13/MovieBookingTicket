@@ -25,7 +25,7 @@ function register_user(string $username, string $email, string $password): bool
 
 function find_user_by_username(string $username)
 {
-    $sql = 'SELECT id ,username, password
+    $sql = 'SELECT user_id ,username, password
             FROM users
             WHERE username=:username';
 
@@ -150,8 +150,8 @@ function editUser($data)
 function deleteUser($id)
 {
     $pdo = db();
-    $stmt = $pdo->prepare('DELETE FROM users WHERE id_user = :id_user');
-    $stmt->execute([':id_user' => $id]);
+    $stmt = $pdo->prepare('DELETE FROM users WHERE user_id = :user_id');
+    $stmt->execute(['user_:id' => $id]);
 }
 
 function delete_users(array $user_ids): bool
@@ -164,7 +164,7 @@ function delete_users(array $user_ids): bool
     $placeholders = implode(',', array_fill(0, count($user_ids), '?'));
 
     // SQL query with IN clause
-    $sql = "DELETE FROM users WHERE id_user IN ($placeholders)";
+    $sql = "DELETE FROM users WHERE user_id IN ($placeholders)";
 
     $statement = db()->prepare($sql);
 
