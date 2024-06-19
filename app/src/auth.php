@@ -25,7 +25,7 @@ function register_user(string $username, string $email, string $password): bool
 
 function find_user_by_username(string $username)
 {
-    $sql = 'SELECT user_id ,username, password
+    $sql = 'SELECT user_id, username, password
             FROM users
             WHERE username=:username';
 
@@ -38,7 +38,7 @@ function find_user_by_username(string $username)
 
 function find_role_by_username(string $username)
 {
-    $sql = 'SELECT username, is_admin
+    $sql = 'SELECT user_id, username, is_admin
             FROM users
             WHERE username=:username';
 
@@ -74,7 +74,7 @@ function login(string $username, string $password): bool
 
         // set username and user_id in the session
         $_SESSION['username'] = $user['username'];
-        $_SESSION['id_user'] = $user['id_user'];
+        $_SESSION['user_id'] = $user['user_id'];
 
         return true;
     }
@@ -121,13 +121,10 @@ function getUsers()
 function addUser($data)
 {
     $pdo = db();
-    $stmt = $pdo->prepare('INSERT INTO users (username, alamat, no_telepon, email, role, password) VALUES (:username, :alamat, :no_telepon, :email, :role, :password)');
+    $stmt = $pdo->prepare('INSERT INTO users (username, email, role, password) VALUES (:username, :email, :role, :password)');
     $stmt->execute([
         ':username' => $data['username'],
-        ':alamat' => $data['alamat'],
-        ':no_telepon' => $data['no_telepon'],
         ':email' => $data['email'],
-        ':role' => $data['role'],
         ':password' => password_hash($data['password'], PASSWORD_BCRYPT)
     ]);
 }
@@ -135,23 +132,13 @@ function addUser($data)
 function editUser($data)
 {
     $pdo = db();
-    $stmt = $pdo->prepare('UPDATE users SET username = :username, alamat = :alamat, no_telepon = :no_telepon, email = :email, role = :role, password = :password WHERE id_user = :id_user');
+    $stmt = $pdo->prepare('UPDATE users SET username = :username, email = :email, is_admin = :is_admin WHERE user_id = :user_id');
     $stmt->execute([
         ':username' => $data['username'],
-        ':alamat' => $data['alamat'],
-        ':no_telepon' => $data['no_telepon'],
         ':email' => $data['email'],
-        ':role' => $data['role'],
-        ':password' => password_hash($data['password'], PASSWORD_DEFAULT),
-        ':id_user' => $data['id_user']
+        ':is_admin' => $data['is_admin'],
+        ':user_id' => $data['user_id']
     ]);
-}
-
-function deleteUser($id)
-{
-    $pdo = db();
-    $stmt = $pdo->prepare('DELETE FROM users WHERE user_id = :user_id');
-    $stmt->execute(['user_:id' => $id]);
 }
 
 function delete_users(array $user_ids): bool
@@ -164,7 +151,7 @@ function delete_users(array $user_ids): bool
     $placeholders = implode(',', array_fill(0, count($user_ids), '?'));
 
     // SQL query with IN clause
-    $sql = "DELETE FROM users WHERE user_id IN ($placeholders)";
+    $sql = "DELETE FROM users WHERE id_user IN ($placeholders)";
 
     $statement = db()->prepare($sql);
 

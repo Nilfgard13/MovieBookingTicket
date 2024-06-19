@@ -43,6 +43,7 @@ if (is_post_request()) {
 
     if (empty($errors)) {
         // Register user
+        //die("KOntolll");
         // register_user($username, $email, $password);
         if (register_user($username, $email, $password)) {
             $success_message = 'Your account has been created successfully. Please login here.';

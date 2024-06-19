@@ -1,6 +1,5 @@
 <?php
 
-
 const DB_HOST = 'localhost';
 const DB_NAME = 'getticket';
 const DB_USER = 'root';
